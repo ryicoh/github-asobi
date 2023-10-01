@@ -10,7 +10,6 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   no-build:
-    if: ${{ github.event.label.name != 'build3' }}
     runs-on: ubuntu-latest
     steps:
       - run: if [[ "${{ github.event.label.name  }}" -eq 'build3' ]]; then exit 0; else exit 1; end
